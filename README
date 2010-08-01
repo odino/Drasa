@@ -5,7 +5,7 @@ DRASA
 
 
 ********************************************
-Description
+DESCRIPTION
 ********************************************
 
 Drasa is a simple bash script to have an overview of italian taxes.
@@ -17,7 +17,7 @@ only for > 30k incomings.
 by Drasa.
 
 ********************************************
-Usage
+USAGE
 ********************************************
 
 Download the main ( and unique ) script and move into it's directory.
@@ -28,7 +28,7 @@ If not executable, make it:
 Then simply launch it and follow its instructions.
 
 ********************************************
-Thrusthworty?
+TRUSTWORTHY?
 ********************************************
 
 Drasa is not a business consultant, so it cannot calculate your
@@ -38,3 +38,20 @@ IRPEF to subtract to your total incoming.
 So, for now, it gives you a worst overview of the reality, where I mean
 that it gives you a predition of your net incomings that is lower than
 what you actually are gonna earn.
+
+********************************************
+HELP!
+********************************************
+
+Feel free to fork and contact me, or just give me any hints if you have
+more information than me about the ordinary taxes management in Italy.
+
+Needs to be implemented:
+* a way to calculate taxes over 75k
+* a way to calculate the percentage of IRPEF to scale from the total amount of taxes
+* a way to calculate the percentage of
+    + petrol
+    + phone
+    + common expenses
+    + rent
+  to scale from the total amount of taxes
