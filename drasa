@@ -1,7 +1,10 @@
 #!/bin/bash
 
-echo -e "\033[2mWelcome to the italian spaghetti tax calculator\033[0m"
-echo -e "\033[2mby Nadalin Alessandro (http://www.odino.org)\033[0m"
+echo -e "\033[4;2mWelcome to the italian spaghetti tax calculator by Nadalin Alessandro (http://www.odino.org)\033[0m"
+echo -e "\033[4;2mprovided with no warranty and licensed under X11 ( former known as MIT ) license (see: http://en.wikipedia.org/wiki/MIT_License).\033[0m"
+
+echo -e "\033[33m\nPlease enter your total incomings (excluded VAT):\033[0m"
+
 read total
 USED_INPS=2800
 let ADDITIONAL_INPS=($total - 14000)*2/10
@@ -36,10 +39,13 @@ fi
 
 let ANNUAL=$total-$IRAP-$INPS-$IRPEF
 let MONTHLY=$ANNUAL/12
+let VAT=$total*2/10
 
-echo "your total is $total"
-echo "INPS is $INPS"
-echo "IRAP is $IRAP"
-echo "IRPEF is $IRPEF"
-echo -e "\033[4mYou earn $ANNUAL annually\033[0m"
-echo "You earn $MONTHLY monthly (12m)"
+echo -e ".....  +" "\033[4;32m$total\033[0m" "\ttotal earning"
+echo -e ".....  ~" "\033[4;33m$VAT\033[0m" "\tvat"
+echo -e ".....  -" "\033[4;31m$INPS\033[0m" "\tINPS"
+echo -e ".....  -" "\033[4;31m$IRAP\033[0m" "\tIRAP"
+echo -e ".....  -" "\033[4;31m$IRPEF\033[0m" "\tIRPEF"
+
+echo -e "\033[32m\nYou earn\033[0m" "\033[1;32m$ANNUAL\033[0m" "\033[32mannually\033[0m"
+echo -e "\033[32mYou earn\033[0m" "\033[1;32m$MONTHLY\033[0m" "\033[32mmonthly (12m)\033[0m"

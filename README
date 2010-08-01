@@ -8,7 +8,7 @@ DRASA
 Description
 ********************************************
 
-Drasa is a simple script to have an overview of italian taxes.
+Drasa is a simple bash script to have an overview of italian taxes.
 
 It's dumb and made for my own purposes, so actually can calculate taxes
 only for > 30k incomings.
