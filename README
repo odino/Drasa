@@ -1,0 +1,40 @@
+============================================
+DRASA
+============================================
+
+
+
+********************************************
+Description
+********************************************
+
+Drasa is a simple script to have an overview of italian taxes.
+
+It's dumb and made for my own purposes, so actually can calculate taxes
+only for > 30k incomings.
+
+"Regime dei minimi" and other facilitated tax scenarios are not covered
+by Drasa.
+
+********************************************
+Usage
+********************************************
+
+Download the main ( and unique ) script and move into it's directory.
+
+If not executable, make it: 
+* sudo chmod u+x drasa.sh
+
+Then simply launch it and follow its instructions.
+
+********************************************
+Thrusthworty?
+********************************************
+
+Drasa is not a business consultant, so it cannot calculate your
+outcoming expenses and, for now, cannot calculate the percentage of
+IRPEF to subtract to your total incoming.
+
+So, for now, it gives you a worst overview of the reality, where I mean
+that it gives you a predition of your net incomings that is lower than
+what you actually are gonna earn.
