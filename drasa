@@ -1,0 +1,45 @@
+#!/bin/bash
+
+echo -e "\033[2mWelcome to the italian spaghetti tax calculator\033[0m"
+echo -e "\033[2mby Nadalin Alessandro (http://www.odino.org)\033[0m"
+read total
+USED_INPS=2800
+let ADDITIONAL_INPS=($total - 14000)*2/10
+let INPS=$USED_INPS+ADDITIONAL_INPS
+let IRAP=($total - 8000)*4/100
+
+IRPEF_23=3450
+IRPEF_27=3510
+IRPEF_38=10260
+IRPEF_41=8200
+
+if [ $total -gt 15000 ]; then
+  IRPEF=3450
+  if [ $total -gt 28000 ]; then
+    let IRPEF=$IRPEF+3510
+    if [ $total -gt 55000 ]; then
+      let IRPEF=$IRPEF+10260
+      if [ $total -gt 75000 ]; then
+        let IRPEF=$IRPEF+8200
+      else
+        let IRPEF=($total - 55000)*41/100+$IRPEF
+      fi          
+    else
+      let IRPEF=($total - 28000)*38/100+$IRPEF
+    fi    
+  else
+    let IRPEF=($total - 15000)*27/100+$IRPEF
+  fi
+else
+  let IRPEF=($total)*23/100
+fi
+
+let ANNUAL=$total-$IRAP-$INPS-$IRPEF
+let MONTHLY=$ANNUAL/12
+
+echo "your total is $total"
+echo "INPS is $INPS"
+echo "IRAP is $IRAP"
+echo "IRPEF is $IRPEF"
+echo -e "\033[4mYou earn $ANNUAL annually\033[0m"
+echo "You earn $MONTHLY monthly (12m)"
